@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UB Hotel & Conference Centre | Gaborone</title>
+
+<meta name="description" content="UB Hotel & Conference Centre offers modern luxury accommodation, conference facilities, dining and premium hospitality in Gaborone.">
+<meta property="og:title" content="UB Hotel & Conference Centre">
+<meta property="og:description" content="Luxury rooms, conference venues and exceptional hospitality in Gaborone.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<script>
+ tailwind.config = {
+  theme:{
+   extend:{
+    fontFamily:{
+     sans:['Lato','sans-serif'],
+     serif:['Playfair Display','serif']
+    },
+    colors:{
+     brand:{
+      gold:'#C5A059',
+      dark:'#0F172A',
+      light:'#F8FAFC'
+     }
+    }
+   }
+  }
+ }
+</script>
+
+<style>
+body{scroll-behavior:smooth}
+.reveal{opacity:0;transform:translateY(30px);transition:all .7s ease}
+.reveal.active{opacity:1;transform:translateY(0)}
+
+.img-zoom{overflow:hidden}
+.img-zoom img{transition:transform .5s}
+.img-zoom:hover img{transform:scale(1.1)}
+
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-thumb{background:#C5A059}
+
+#loader{position:fixed;inset:0;background:#0F172A;display:flex;align-items:center;justify-content:center;z-index:9999}
+
+/* Skip navigation link */
+.skip-link{position:absolute;top:-40px;left:0;background:#C5A059;color:#000;padding:8px;z-index:100;text-decoration:none;font-weight:bold}
+.skip-link:focus{top:0}
+
+/* Focus visible for accessibility */
+*:focus-visible{outline:2px solid #C5A059;outline-offset:2px}
+
+/* Print styles */
+@media print{
+ nav,#loader,#mobile-menu,.skip-link{display:none!important}
+ body{background:white;color:black}
+ a{text-decoration:underline;color:black}
+}
+</style>
+</head>
+
+<body class="font-sans bg-slate-50 text-slate-800">
+
+<!-- Skip Navigation -->
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- Loader -->
+<div id="loader">
+ <h1 class="font-serif text-4xl text-brand-gold animate-pulse tracking-widest">UB HOTEL</h1>
+</div>
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 text-white py-4 transition-all duration-300 bg-brand-dark/90 shadow-lg">
+
+<div class="relative max-w-7xl mx-auto px-6 flex justify-between items-center">
+
+<!-- logo -->
+<a href="#" class="font-serif text-2xl tracking-wider -ml-12 focus-visible:outline-offset-4">
+<span class="text-brand-gold">UB</span> HOTEL
+</a>
+
+<!-- desktop menu -->
+<div class="hidden md:flex gap-8 text-sm uppercase tracking-wide font-semibold">
+<a href="#rooms" class="hover:text-brand-gold transition-colors p-2 -m-2">Rooms</a>
+<a href="#restaurant" class="hover:text-brand-gold transition-colors p-2 -m-2">Restaurant</a>
+<a href="#conference" class="hover:text-brand-gold transition-colors p-2 -m-2">Conference</a>
+<a href="#gallery" class="hover:text-brand-gold transition-colors p-2 -m-2">Gallery</a>
+<a href="#contact" class="hover:text-brand-gold transition-colors p-2 -m-2">Contact</a>
+</div>
+
+<button id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-2xl p-2 -mr-2">
+<i class="fas fa-bars"></i>
+</button>
+
+</div>
+
+<div id="mobile-menu" class="fixed inset-0 bg-brand-dark flex flex-col items-center justify-center space-y-10 text-white transform translate-x-full transition-transform duration-300 md:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+<button id="close-menu-btn" aria-label="Close menu" class="absolute top-6 right-6 text-3xl p-2">
+<i class="fas fa-times"></i>
+</button>
+<a class="mobile-link text-2xl p-4" href="#rooms">Rooms</a>
+<a class="mobile-link text-2xl p-4" href="#restaurant">Restaurant</a>
+<a class="mobile-link text-2xl p-4" href="#conference">Conference</a>
+<a class="mobile-link text-2xl p-4" href="#gallery">Gallery</a>
+<a class="mobile-link text-2xl p-4" href="#contact">Contact</a>
+</div>
+
+</nav>
+
+<main id="main">
+
+<!-- Hero -->
+<header class="relative h-screen flex items-center justify-center text-center text-white">
+
+<div class="absolute inset-0">
+<img src="images/00001.jpg" alt="UB Hotel exterior" class="w-full h-full object-cover" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+<div style="display:none" class="absolute inset-0 bg-brand-dark items-center justify-center text-brand-gold font-serif text-2xl -ml-16">UB Hotel</div>
+<div class="absolute inset-0 bg-black/60"></div>
+</div>
+
+<div class="relative z-10 max-w-3xl px-6 pt-20">
+
+<p class="text-brand-gold tracking-[0.3em] uppercase text-sm reveal">Welcome</p>
+
+<h1 class="font-serif text-5xl md:text-7xl leading-tight reveal" style="transition-delay:100ms">
+UB Hotel & Conference Centre
+</h1>
+
+<p class="mt-6 text-lg text-slate-200 reveal" style="transition-delay:200ms">
+Modern hospitality, elegant accommodation and conference excellence in Gaborone.
+</p>
+
+<!-- Booking Widget -->
+<div class="mt-10 bg-white/10 backdrop-blur-md p-5 border border-white/20 reveal" style="transition-delay:300ms">
+
+<form class="grid grid-cols-2 md:grid-cols-4 gap-4 items-end" onsubmit="event.preventDefault(); this.querySelector('button').disabled=true;this.querySelector('button').textContent='Checking...';setTimeout(()=>{this.querySelector('button').disabled=false;this.querySelector('button').textContent='Check Availability'},2000)">
+
+<div class="text-left">
+<label for="checkin" class="text-xs uppercase text-brand-gold block mb-1">Check‑in</label>
+<input id="checkin" type="date" class="w-full bg-transparent border-b border-white/30 py-2 text-white focus:outline-none focus:border-brand-gold" required>
+</div>
+
+<div class="text-left">
+<label for="checkout" class="text-xs uppercase text-brand-gold block mb-1">Check‑out</label>
+<input id="checkout" type="date" class="w-full bg-transparent border-b border-white/30 py-2 text-white focus:outline-none focus:border-brand-gold" required>
+</div>
+
+<div class="text-left">
+<label for="guests" class="text-xs uppercase text-brand-gold block mb-1">Guests</label>
+<select id="guests" class="w-full bg-transparent border-b border-white/30 py-2 text-white focus:outline-none focus:border-brand-gold">
+<option value="1">1 Guest</option>
+<option value="2">2 Guests</option>
+<option value="family">Family</option>
+</select>
+</div>
+
+<button type="submit" class="bg-brand-gold text-brand-dark font-bold py-3 uppercase text-sm hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+Check Availability
+</button>
+
+</form>
+</div>
+
+</div>
+</header>
+
+<!-- Rooms -->
+<section id="rooms" class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="mb-12 text-center reveal">
+<h2 class="font-serif text-4xl text-brand-dark">Rooms & Suites</h2>
+<p class="text-slate-500 mt-3">Comfortable modern accommodation designed for business and leisure travelers.</p>
+</div>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<article class="img-zoom reveal bg-slate-50 rounded-lg overflow-hidden shadow-sm">
+<img src="images/room-deluxe.jpg" loading="lazy" class="w-full h-64 object-cover" alt="Deluxe Room with king bed and modern furnishings">
+<div class="p-6">
+<h3 class="font-serif text-xl mb-2">Deluxe Room</h3>
+<p class="text-sm text-slate-500">King bed, workspace, high speed Wi‑Fi.</p>
+</div>
+</article>
+
+<article class="img-zoom reveal bg-slate-50 rounded-lg overflow-hidden shadow-sm">
+<img src="images/exec001.jpg" loading="lazy" class="w-full h-64 object-cover" alt="Executive Suite with living area">
+<div class="p-6">
+<h3 class="font-serif text-xl mb-2">Executive Suite</h3>
+<p class="text-sm text-slate-500">Extra living space and premium amenities.</p>
+</div>
+</article>
+
+<article class="img-zoom reveal bg-slate-50 rounded-lg overflow-hidden shadow-sm">
+<img src="images/room-suite.jpg" loading="lazy" class="w-full h-64 object-cover" alt="Presidential Suite with city views">
+<div class="p-6">
+<h3 class="font-serif text-xl mb-2">Presidential Suite</h3>
+<p class="text-sm text-slate-500">Luxury accommodation with city views.</p>
+</div>
+</article>
+
+</div>
+
+</div>
+</section>
+
+<!-- Conference -->
+<section id="conference" class="relative py-20 overflow-hidden">
+
+<img src="images/007.jpg" alt="Conference Centre meeting room" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+
+<div class="absolute inset-0 bg-gray-900/60"></div>
+
+<div class="relative max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-3 gap-8">
+
+<!-- Empty first column -->
+<div class="hidden md:block"></div>
+
+<!-- Conference Box in middle column (under Executive Suite) - moved up and wider -->
+<div class="col-span-1 -mt-12">
+<div class="w-full max-w-2xl bg-gray-800/70 backdrop-blur-sm p-10 rounded-lg border-2 border-brand-gold">
+<h2 class="text-4xl font-serif mb-4 text-white">Conference Centre</h2>
+<p class="text-gray-200 leading-relaxed">
+Flexible meeting and conference spaces designed for business gatherings, seminars, and corporate events. Modern facilities and professional service create the ideal environment for productive meetings and memorable events.
+</p>
+
+<button class="mt-6 px-6 py-3 bg-brand-gold text-black font-semibold rounded hover:bg-white transition-colors" onclick="alert('Enquiry form coming soon')">
+Enquire Now
+</button>
+</div>
+</div>
+
+<!-- Empty third column -->
+<div class="hidden md:block"></div>
+
+</div>
+</div>
+
+</section>
+
+<!-- Gallery -->
+<section id="gallery" class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="font-serif text-4xl text-center mb-12">Gallery</h2>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4" role="list" aria-label="Hotel gallery">
+<div class="bg-slate-200 h-40 rounded flex items-center justify-center text-slate-400 text-sm" role="listitem" aria-label="Hotel exterior view">Exterior</div>
+<div class="bg-slate-200 h-40 rounded flex items-center justify-center text-slate-400 text-sm" role="listitem" aria-label="Hotel lobby">Lobby</div>
+<div class="bg-slate-200 h-40 rounded flex items-center justify-center text-slate-400 text-sm" role="listitem" aria-label="Dining area">Dining</div>
+<div class="bg-slate-200 h-40 rounded flex items-center justify-center text-slate-400 text-sm" role="listitem" aria-label="Pool area">Pool</div>
+</div>
+
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-24 bg-brand-gold text-brand-dark text-center">
+
+<h2 class="font-serif text-3xl mb-4">Contact UB Hotel</h2>
+
+<p class="mb-6">Gaborone, Botswana</p>
+
+<p class="mb-2">Phone: <a href="tel:+2670000000" class="underline hover:no-underline">+267 XXX XXX</a></p>
+<p>Email: <a href="mailto:reservations@ubhotel.com" class="underline hover:no-underline">reservations@ubhotel.com</a></p>
+
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-brand-dark text-slate-400 py-12 text-center">
+
+<p id="copyright"></p>
+
+</footer>
+
+<script>
+
+// dynamic year
+const year=new Date().getFullYear();
+document.getElementById('copyright').innerText=`© ${year} UB Hotel & Conference Centre`;
+
+// loader
+window.addEventListener('load',()=>{
+const loader=document.getElementById('loader');
+loader.style.opacity='0';
+setTimeout(()=>loader.remove(),500);
+});
+
+// mobile menu with focus trap and body scroll lock
+const btn=document.getElementById('mobile-menu-btn');
+const close=document.getElementById('close-menu-btn');
+const menu=document.getElementById('mobile-menu');
+let lastFocusedElement;
+
+function openMenu(){
+lastFocusedElement=document.activeElement;
+menu.classList.remove('translate-x-full');
+btn.setAttribute('aria-expanded','true');
+document.body.style.overflow='hidden';
+close.focus();
+}
+
+function closeMenu(){
+menu.classList.add('translate-x-full');
+btn.setAttribute('aria-expanded','false');
+document.body.style.overflow='';
+lastFocusedElement.focus();
+}
+
+btn.addEventListener('click',openMenu);
+close.addEventListener('click',closeMenu);
+
+// close menu on escape key
+document.addEventListener('keydown',(e)=>{
+if(e.key==='Escape'&&!menu.classList.contains('translate-x-full')){
+closeMenu();
+}
+});
+
+// close menu when clicking links
+document.querySelectorAll('.mobile-link').forEach(link=>{
+link.addEventListener('click',closeMenu);
+});
+
+// reveal animation
+const reveal=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('active');}
+});
+},{threshold:.15});
+reveal.forEach(el=>observer.observe(el));
+
+</script>
+
+</body>
+</html>
